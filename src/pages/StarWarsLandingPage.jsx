@@ -8,11 +8,15 @@
 
 import { useEffect } from "react";
 import { CharacterSet } from "../components/CharacterSet";
-import { VehicalSet } from "../components/VehiclesSet.jsx";
+import { VehicleSet } from "../components/VehicleSet.jsx";
+import { PlanetSet } from "../components/PlanetSet.jsx";
 import { fetchAllPeople } from "../lib/fetch.js";
 import { fetchAllPlanets } from "../lib/fetch.js";
 import { fetchAllVehicles } from "../lib/fetch.js";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import "../index.css"
+
+
 
 export const StarWarsLandingPage = () => {
     const {store, dispatch} = useGlobalReducer();
@@ -32,19 +36,20 @@ export const StarWarsLandingPage = () => {
                 dispatch={dispatch}
                 />
             </div>
-            {/* <div className="planet-group">
+            <div className="planet-group">
                 <h1>Planets</h1>
                 <PlanetSet
-                allPlanet={store.allplanet}
+                allPlanet={store.allPlanet}
                 dispatch={dispatch}
                 />
             </div>
             <div className="vehicle-group">
                 <h1>Vehicles</h1>
-                <VehicalSet
-                
+                <VehicleSet
+                allVehicle={store.allVehicle}
+                dispatch={dispatch}
                 />
-            </div> */}
+            </div>
 
         </div>
         <div className="col-1"></div>

@@ -9,6 +9,8 @@ import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { StarWarsLandingPage } from "./pages/StarWarsLandingPage";
 import { PeopleProfilePage } from "./pages/PeopleProfilePage";
+import { PlanetProfilePage } from "./pages/PlanetProfilePage";
+import { VehicleProfilePage } from "./pages/VehicleProfilePages";
 
 
 export const router = createBrowserRouter(
@@ -25,6 +27,8 @@ export const router = createBrowserRouter(
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<StarWarsLandingPage />} />
         <Route path="/profile-page/people/:uid" element={<PeopleProfilePage />} />
+        <Route path="/profile-page/planets/:uid" element={<PlanetProfilePage/>} />
+        <Route path="/profile-page/vehicles/:uid" element={<VehicleProfilePage/>} />
       </Route>
     )
 );

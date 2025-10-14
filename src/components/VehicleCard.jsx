@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const style = {
     width: "18rem",
 }
-export const CharacterCard = ({uid,name,dispatch}) => {
+export const VehicleCard = ({uid,name,dispatch}) => {
 
     return (
         <>
@@ -11,7 +11,7 @@ export const CharacterCard = ({uid,name,dispatch}) => {
                 <img src="..." className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <Link to={`/profile-page/people/${uid}`}>
+                    <Link to={`/profile-page/vehicles/${uid}`}>
                     <button className="btn btn-primary">Learn More</button>
                     </Link>
                 </div>

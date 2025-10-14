@@ -1,4 +1,4 @@
-import { CharacterCard } from "./CharacterCard"
+import { VehicleCard } from "./VehicleCard"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 
 const style = {
@@ -11,19 +11,19 @@ const style = {
 
 
 
-export const CharacterSet = ({allPeople,dispatch}) => {
+export const VehicleSet = ({allVehicle,dispatch}) => {
     
 
     return(
         <>
         <div className="row flex" style = {style}>
             {
-                 allPeople.map(person => {
+                 allVehicle.map(vehicle => {
                     return(
-                        <CharacterCard
-                        key={person.uid}
-                        uid={person.uid}
-                        name={person.name}
+                        <VehicleCard
+                        key={vehicle.uid}
+                        uid={vehicle.uid}
+                        name={vehicle.name}
                         dispatch={dispatch}
                         />
                     )
