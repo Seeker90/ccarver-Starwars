@@ -8,8 +8,8 @@
 
 import { useEffect } from "react";
 import { CharacterSet } from "../components/CharacterSet";
-import { VehicleSet } from "../components/VehicleSet.jsx";
-import { PlanetSet } from "../components/PlanetSet.jsx";
+// import { VehicleSet } from "../components/VehicleSet.jsx";
+// import { PlanetSet } from "../components/PlanetSet.jsx";
 import { fetchAllPeople } from "../lib/fetch.js";
 import { fetchAllPlanets } from "../lib/fetch.js";
 import { fetchAllVehicles } from "../lib/fetch.js";
@@ -36,7 +36,7 @@ export const StarWarsLandingPage = () => {
                 dispatch={dispatch}
                 />
             </div>
-            <div className="planet-group">
+            {/* <div className="planet-group">
                 <h1>Planets</h1>
                 <PlanetSet
                 allPlanet={store.allPlanet}
@@ -49,7 +49,7 @@ export const StarWarsLandingPage = () => {
                 allVehicle={store.allVehicle}
                 dispatch={dispatch}
                 />
-            </div>
+            </div> */}
 
         </div>
         <div className="col-1"></div>
