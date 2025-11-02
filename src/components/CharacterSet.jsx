@@ -1,35 +1,25 @@
 import { CharacterCard } from "./CharacterCard"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 
-const style = {
-  overflowX: "auto", 
-  overflowY: "hidden", 
-  flexWrap: "nowrap",
-  whitespace: "nowrap", 
-  verticalalign: "top",
-}
-
-
-
-export const CharacterSet = ({allPeople,dispatch}) => {
+export const CharacterSet = ({allPeople, dispatch}) => {  
+    const { store } = useGlobalReducer();
     
-
     return(
-        <>
-        <div className="row flex" style = {style}>
-            {
-                 allPeople.map(person => {
-                    return(
-                        <CharacterCard
+        <div className="row d-flex flex-nowrap overflow-auto">
+            {allPeople.map(person => {
+                return(
+                    <CharacterCard
                         key={person.uid}
                         uid={person.uid}
                         name={person.name}
+                        gender={person.gender}
+                        skin_color={person.skin_color}
+                        hair_color={person.hair_color}
                         dispatch={dispatch}
-                        />
-                    )
-                })
-            }
+                        isFavorited={store.favorites?.some(fav => fav.uid === person.uid)}
+                    />
+                )
+            })}
         </div>
-        </>
     )
 }

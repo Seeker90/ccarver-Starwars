@@ -1,35 +1,25 @@
-// import { VehicleCard } from "./VehicleCard"
-// import useGlobalReducer from "../hooks/useGlobalReducer"
+import { VehicleCard } from "./VehicleCard";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
-// const style = {
-//   overflowX: "auto", 
-//   overflowY: "hidden", 
-//   flexWrap: "nowrap",
-//   whitespace: "nowrap", 
-//   verticalalign: "top",
-// }
+export const VehicleSet = ({ allVehicles, dispatch }) => {
+  const { store } = useGlobalReducer();
 
-
-
-// export const VehicleSet = ({allVehicle,dispatch}) => {
-    
-
-//     return(
-//         <>
-//         <div className="row flex" style = {style}>
-//             {
-//                  allVehicle.map(vehicle => {
-//                     return(
-//                         <VehicleCard
-//                         key={vehicle.uid}
-//                         uid={vehicle.uid}
-//                         name={vehicle.name}
-//                         dispatch={dispatch}
-//                         />
-//                     )
-//                 })
-//             }
-//         </div>
-//         </>
-//     )
-// }
+  return (
+  
+      <div className="row d-flex flex-nowrap overflow-auto">
+        {allVehicles.map(vehicle => {
+          return (
+            <VehicleCard 
+              key={vehicle.uid}
+              uid={vehicle.uid}
+              name={vehicle.name}
+              vehicle_class={vehicle.vehicle_class}
+              length={vehicle.length}
+              dispatch={dispatch}
+              isFavorited={store.favorites?.some(fav => fav.uid === vehicle.uid)}
+            />
+          )
+        })}
+      </div>
+  );
+}
